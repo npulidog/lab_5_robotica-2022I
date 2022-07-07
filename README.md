@@ -19,8 +19,7 @@ Robótica</p1>
 
 ## Resumen
 
-Este repositorio presenta el desarrollo de la practica 5 del laboratorio de Robótica, donde se hace uso del manipulador industrial ABB IRB140 para el desarrollo de una rutina que dibuje las iniciales de cada uno de los integrantes del grupo (DGN) en un area determinada de trabajo utlizando un marcador.
+Este repositorio presenta el desarrollo de la practica 5 del laboratorio de Robótica, el cual en base a lo desarrollado a la practica 4 de laboratorio donde haciendo uso del manipulador industrial ABB IRB140 se desarrollaba de una rutina que dibuje las iniciales de cada uno de los integrantes del grupo (DGN), se hace uso de diferentes señales de entrada se controla y seleccionan diferentes formas de realizar la rutina con el manipulador (con un plano inclinado o un plano horizontal). Tambien se hace uso de las señales de entrada para realizar pick-n-place con diferentes objetos utilizando un gripper electroneumatico. 
 
-## Metodología
-
-### Herramienta
+## Tarea 1: Entradas digitales
+## Tarea 2: Gripper Electroneumatico
