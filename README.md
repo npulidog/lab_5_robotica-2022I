@@ -125,5 +125,4 @@ MODULE Module1
     
 ENDMODULE
 ```
-
-## Gripper Electroneumatico
+La implementación fisica se puede ver en el siguiente [video](https://youtu.be/I4B5uM2rMkM)
