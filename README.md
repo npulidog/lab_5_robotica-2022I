@@ -21,7 +21,7 @@ Robótica</p1>
 
 Este repositorio presenta el desarrollo de la practica 5 del laboratorio de Robótica, el cual en base a lo desarrollado a la [practica 4 de laboratorio](https://github.com/npulidog/lab_4_robotica-2022I) donde haciendo uso del manipulador industrial ABB IRB140 se desarrollaba de una rutina que dibuje las iniciales de cada uno de los integrantes del grupo (DGN), se hace uso de diferentes señales de entrada se controla y seleccionan diferentes formas de realizar la rutina con el manipulador (con un plano inclinado o un plano horizontal). Tambien se hace uso de las señales de entrada para realizar pick-n-place con diferentes objetos utilizando un gripper electroneumatico. 
 
-## Entradas digitales
+## Tarea 1
 
 En la [practica 4 de laboratorio](https://github.com/npulidog/lab_4_robotica-2022I) se desarrollaron dos módulos en RAPID donde se indicaban las trayectorias necesarias para que el manipulador dibujara las iniciales de cada uno de los integrantes del grupo (DGN) en un area determinada de trabajo utlizando un marcador; un modulo para un plano horizontal y el otro para un plano inclinado de 30°.
 
@@ -125,9 +125,12 @@ MODULE Module1
     
 ENDMODULE
 ```
-## Video
+## Video 1
 
-La implementación fisica se puede ver en el siguiente [video](https://youtu.be/I4B5uM2rMkM)
+La implementación física se puede ver en el siguiente [video](https://youtu.be/I4B5uM2rMkM)
+
+## Tarea 2
+Para el desarrollo de la segunda parte se hizó uso completamente de la simulación de Robot Studio, donde para iniciar se crearon las posiciones de las piezas y las ubicaciones de las 6 gavetas donde se quiere dejar dichas piezas.
 
 ## Conclusiones
 - El uso de entradas y salidas digitales es importante para establecer la capacidad real de un manipulador en situaciones industriales reales, puesto que define las rutinas y las configuraciones del manipulador de manera mas eficiente optimizando tiempo de cambio entre rutinas y trayectorias.
