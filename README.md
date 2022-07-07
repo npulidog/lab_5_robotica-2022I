@@ -126,7 +126,7 @@ MODULE Module1
 ENDMODULE
 ```
 ## Video 1
-
+La simulación se puede ver en el siguiente [video](https://youtu.be/6EF9mkZaXuQ)
 La implementación física se puede ver en el siguiente [video](https://youtu.be/I4B5uM2rMkM)
 
 ## Tarea 2
@@ -143,6 +143,7 @@ Donde se tienen 6 señales digitales de entrada y una de salida, las primeras de
   <img align="center"; width="500"  src="Fig/Gavetas.jpg">
 </p>
 De esta manera se muestra la numeración de las gavetas y las combinaciones de las señales digitales que permiten su ubicación en el espacio y se procede a realizar la programación en RAPID. Se sigue el siguiente modelo en el Main del módulo (se presenta un fragmento del código):
+
 ```
 IF DI_01=1 THEN
             IF DI_04=0 AND DI_05=1 THEN
@@ -197,6 +198,7 @@ IF DI_01=1 THEN
         ENDIF
         
 ```
+
 Para iniciar se crea un condicional que reviza si se activa alguna de las señales de las piezas, por ende se tienen tres "IF" globales en este caso mostrando solo uno, dentro de estos se mencionan las posibilidades de las gavetas mostradas previamenten en la tabla, en el caso de que se cumpla alguna, se realiza la trayectoria de la recolección de la pieza indicada, se activa el gripper y se establece un tiempo para que se pueda realizar el agarre, posterior a esto inicia la trayectoria de la gaveta elegida y cuando llegue se suelta el objeto, con el mismo tiempo de espera, y por último se dirige a home a la espera de la siguiente indicación. 
 ## Video 2
 
