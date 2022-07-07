@@ -130,7 +130,79 @@ ENDMODULE
 La implementación física se puede ver en el siguiente [video](https://youtu.be/I4B5uM2rMkM)
 
 ## Tarea 2
-Para el desarrollo de la segunda parte se hizó uso completamente de la simulación de Robot Studio, donde para iniciar se crearon las posiciones de las piezas y las ubicaciones de las 6 gavetas donde se quiere dejar dichas piezas.
+Para el desarrollo de la segunda parte se hizó uso completamente de la simulación de RobotStudio, donde para iniciar se crearon las posiciones de las piezas y las ubicaciones de las 6 gavetas donde se quiere dejar dichas piezas, es necesario tener en cuenta que para esta selección se toma un TCP de 3 cm en el medio, desde  la linea que generan las puntas del gripper, de esta manera se evitan choques contra el piso, esto se evidencia en la creacción de una herramienta en el programa tal y como se realizó en el laboratorio 4.
+<p align="center">
+  <img align="center"; width="500"  src="Fig/Posiciones.png">
+</p>
+De la misma manera se crean las trayectorias teniendo en cuenta que las configuraciones sean posibles sin cambios abruptos y en el espacio alcanzable. Dado que no es una trayectorias continua se crean Path's de cada una de las gavetas y las piezas, lo cual facilitara la forma de programar posteriormente mostrado. El paso a seguir es crear cada una de las señales digistales que se van a crear, en este caso son siete tal y como se muestra a continuación.
+<p align="center">
+  <img align="center"; width="500"  src="Fig/Señales_digitales.png">
+</p>
+Donde se tienen 6 señales digitales de entrada y una de salida, las primeras de estas daran la combinación para la selección de las piezas y el desplazamiento de las mismas y la de salidad permitira emular la activación de la válvula electroneumática que acciona el gripper. La combinación mencionada se ve en la siguiente tabla.
+<p align="center">
+  <img align="center"; width="500"  src="Fig/Gavetas.jpg">
+</p>
+De esta manera se muestra la numeración de las gavetas y las combinaciones de las señales digitales que permiten su ubicación en el espacio y se procede a realizar la programación en RAPID. Se sigue el siguiente modelo en el Main del módulo (se presenta un fragmento del código):
+```
+IF DI_01=1 THEN
+            IF DI_04=0 AND DI_05=1 THEN
+                Pieza1;
+                Set DO_01;
+                WaitTime(0.5);
+                Gaveta_01;
+                Reset DO_01;
+                WaitTime(0.5);
+                Home_01;
+            ELSEIF DI_04=0 AND DI_06=1 THEN
+                Pieza1;
+                Set DO_01;
+                WaitTime(0.5);
+                Gaveta_02;
+                Reset DO_01;
+                WaitTime(0.5);
+                Home_01;
+            ELSEIF DI_04=0 AND DI_07=1 THEN
+                Pieza1;
+                Set DO_01;
+                WaitTime(0.5);
+                Gaveta_03;
+                Reset DO_01;
+                WaitTime(0.5);
+                Home_01;
+            ELSEIF DI_04=1 AND DI_05=1 THEN
+                Pieza1;
+                Set DO_01;
+                WaitTime(0.5);
+                Gaveta_04;
+                Reset DO_01;
+                WaitTime(0.5);
+                Home_01;
+            ELSEIF DI_04=1 AND DI_06=1 THEN
+                Pieza1;
+                Set DO_01;
+                WaitTime(0.5);
+                Gaveta_05;
+                Reset DO_01;
+                WaitTime(0.5);
+                Home_01;
+            ELSEIF DI_04=1 AND DI_07=1 THEN
+                Pieza1;
+                Set DO_01;
+                WaitTime(0.5);
+                Gaveta_06;
+                Reset DO_01;
+                WaitTime(0.5);
+                Home_01;
+            ENDIF
+        ENDIF
+        
+```
+Para iniciar se crea un condicional que reviza si se activa alguna de las señales de las piezas, por ende se tienen tres "IF" globales en este caso mostrando solo uno, dentro de estos se mencionan las posibilidades de las gavetas mostradas previamenten en la tabla, en el caso de que se cumpla alguna, se realiza la trayectoria de la recolección de la pieza indicada, se activa el gripper y se establece un tiempo para que se pueda realizar el agarre, posterior a esto inicia la trayectoria de la gaveta elegida y cuando llegue se suelta el objeto, con el mismo tiempo de espera, y por último se dirige a home a la espera de la siguiente indicación. 
+## Video 2
 
+La simulación se puede ver en el siguiente [video](https://www.youtube.com/watch?v=Z8TQ8y7pf-s)
 ## Conclusiones
 - El uso de entradas y salidas digitales es importante para establecer la capacidad real de un manipulador en situaciones industriales reales, puesto que define las rutinas y las configuraciones del manipulador de manera mas eficiente optimizando tiempo de cambio entre rutinas y trayectorias.
+- El manejo de RobotStudio se puede considerar de manera intuitiva ya que el programa maneja una interfaz que permite que el usuario se acerque lo más posible al manejo de un robot real, situación que se pudo comprobar en el trabajo físico y en simulación.
+- Es necesario tener en cuenta los dispositivos que se tienen en fisico para realizar una simualción adecuada, dado que en el momento de simular los pulsadores se veian más como un tipo de enclavamiento, algo que en el caso de los robots que se tienen en la universidad son pulsadores que se desactivan al momento de soltarlos. 
+
