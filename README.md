@@ -126,3 +126,6 @@ MODULE Module1
 ENDMODULE
 ```
 La implementación fisica se puede ver en el siguiente [video](https://youtu.be/I4B5uM2rMkM)
+
+## Conclusiones
+- El uso de entradas y salidas digitales es importante para establecer la capacidad real de un manipulador en situaciones industriales reales, puesto que define las rutinas y las configuraciones del manipulador de manera mas eficiente optimizando tiempo de cambio entre rutinas y trayectorias.
