@@ -15,7 +15,7 @@ Robótica</p1>
   <img align="center"; width="100"  src="Fig/Escudo_UN.png">
 </p>
 
-<p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> <br>29 de junio de 2022</p>
+<p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> <br>06 de julio de 2022</p>
 
 ## Resumen
 
